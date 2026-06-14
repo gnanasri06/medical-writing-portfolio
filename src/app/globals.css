@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ── Base ── */
 html {
   scroll-behavior: smooth;
 }
@@ -20,19 +21,34 @@ body {
   box-sizing: border-box;
 }
 
+/* Slight negative tracking on running text */
 p,
-li {
-  letter-spacing: -0.01em;
+li,
+blockquote {
+  letter-spacing: -0.012em;
 }
 
+/* Remove tap highlight on mobile */
+a,
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Focus ring */
 :focus-visible {
   outline: 2px solid #0064e0;
-  outline-offset: 2px;
+  outline-offset: 3px;
   border-radius: 4px;
 }
 
-/* Accordion animation */
+/* ── Accordion ── */
 .accordion-body {
   overflow: hidden;
   transition: max-height 300ms ease-in-out, opacity 300ms ease-in-out;
+}
+
+/* ── Utility: hide broken img alt text while keeping accessibility ── */
+img {
+  /* color: transparent is intentionally NOT set globally —
+     only set inline on the hero photo to hide broken-image text */
 }
