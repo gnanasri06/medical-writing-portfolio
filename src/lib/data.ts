@@ -8,6 +8,8 @@ export interface Project {
   audience: string
   documentType: string
   caption: string
+  overview: string
+  skills: string
 }
 
 export const projects: Project[] = [
@@ -18,8 +20,10 @@ export const projects: Project[] = [
     category: 'Medical Communication',
     audience: 'Doctors / MSLs',
     documentType: 'MSL Slide Deck',
-    caption:
-      'Equip MSLs to communicate a landmark obesity trial to specialists · Doctors/MSLs · Lead medical writer',
+    caption: 'Equip MSLs to communicate a landmark obesity trial to specialists · Doctors/MSLs · Lead medical writer',
+    overview:
+      'A Medical Science Liaison deck distilling the landmark Phase 3 SURMOUNT-1 trial (Tirzepatide, NEJM 2022) into a field-ready scientific narrative — disease burden, the dual GIP/GLP-1 mechanism, study design, endpoints, and results.',
+    skills: 'Phase 3 trial distillation · scientific storytelling · visual hierarchy · endocrinology fluency',
   },
   {
     id: 2,
@@ -28,8 +32,10 @@ export const projects: Project[] = [
     category: 'Medical Communication',
     audience: 'Doctors',
     documentType: 'Clinical Compendium',
-    caption:
-      'Build a reference-grade clinical resource on respiratory infections · Doctors · Lead writer & researcher',
+    caption: 'Build a reference-grade clinical resource on respiratory infections · Doctors · Lead writer & researcher',
+    overview:
+      'A doctor-facing compendium synthesizing epidemiology, disease burden, and pathogenesis across two respiratory infections, integrating global and India-specific data with molecular pathways.',
+    skills: 'Multi-source literature synthesis · epidemiology · pathophysiology · structured long-form medical writing',
   },
   {
     id: 3,
@@ -38,8 +44,10 @@ export const projects: Project[] = [
     category: 'Scientific Writing',
     audience: 'Doctors',
     documentType: 'Case Report',
-    caption:
-      'Demonstrate real-world impact of IV iron in heart failure · Doctors · Lead medical writer',
+    caption: 'Demonstrate real-world impact of IV iron in heart failure · Doctors · Lead medical writer',
+    overview:
+      'A case report on 1000 mg Ferric Carboxymaltose in a 68-year-old HFrEF patient with newly diagnosed iron deficiency — full presentation, history, clinical course, intervention, and outcome.',
+    skills: 'Clinical narrative construction · cardiology & GDMT fluency · evidence-to-outcome framing',
   },
   {
     id: 4,
@@ -48,8 +56,10 @@ export const projects: Project[] = [
     category: 'Medical Communication',
     audience: 'Doctors',
     documentType: 'Scientific Newsletter',
-    caption:
-      'Engage clinicians with current, evidence-led lipid science · Doctors · Lead writer & editorial designer',
+    caption: 'Engage clinicians with current, evidence-led lipid science · Doctors · Lead writer & editorial designer',
+    overview:
+      'A multi-story scientific newsletter covering India\'s lipid burden, the NAFLD–CVD axis, atherogenic dyslipidemia, dual PPAR-α/γ science (Saroglitazar), and the PRESS V/VI trials.',
+    skills: 'Editorial structuring · data visualization · mechanism communication · Vancouver referencing',
   },
   {
     id: 5,
@@ -58,8 +68,10 @@ export const projects: Project[] = [
     category: 'Pharma Marketing Content',
     audience: 'Doctors',
     documentType: 'Product Monograph',
-    caption:
-      'Establish the clinical and mechanistic case for oral minoxidil · Doctors · Lead medical writer',
+    caption: 'Establish the clinical and mechanistic case for oral minoxidil · Doctors · Lead medical writer',
+    overview:
+      'A clinical product monograph on low-dose oral minoxidil — chemistry, history, the compliance limits of topical therapy, multi-pathway mechanism of action (vasodilatory, anti-inflammatory, antiandrogen), and safety.',
+    skills: 'Mechanism-of-action writing · comparative safety analysis · deep literature referencing · dermatology fluency',
   },
   {
     id: 6,
@@ -68,18 +80,22 @@ export const projects: Project[] = [
     category: 'Pharma Marketing Content',
     audience: 'Doctors',
     documentType: 'Leave-Behind Literature (LBL)',
-    caption:
-      'Differentiate a statin on referenced head-to-head evidence · Doctors · Lead medical writer',
+    caption: 'Differentiate a statin on referenced head-to-head evidence · Doctors · Lead medical writer',
+    overview:
+      'A leave-behind comparing Pitavastatin, Atorvastatin, and Rosuvastatin across new-onset diabetes risk, lipid/CV protection, renal outcomes, and myopathy — every claim referenced.',
+    skills: 'Comparative-evidence framing · claim substantiation · MLR-aware promotional writing',
   },
   {
     id: 7,
     slug: 'endometriosis-video-script',
     title: 'First-Line Therapy for Endometriosis — "Courtroom Debate" Video Script',
-    category: 'Patient Education / Med Comms',
+    category: 'Medical Communication',
     audience: 'Doctors',
     documentType: 'Explainer Video Script',
-    caption:
-      'Make a therapy comparison engaging without diluting the science · Doctors · Concept & script writer',
+    caption: 'Make a therapy comparison engaging without diluting the science · Doctors · Concept & script writer',
+    overview:
+      'An explainer-video script staging Dienogest vs. Elagolix as a courtroom trial — each "defends" its evidence (FOGSI guidance, ELARIS Phase 3 data) before the doctor delivers the verdict.',
+    skills: 'Creative concepting · scientific accuracy under a creative format · gynecology fluency · scriptwriting',
   },
   {
     id: 8,
@@ -88,8 +104,10 @@ export const projects: Project[] = [
     category: 'Patient Education',
     audience: 'Patients',
     documentType: 'Awareness Booklet',
-    caption:
-      'Drive patient behavior change through clear, accurate skin-health education · Patients · Lead writer',
+    caption: 'Drive patient behavior change through clear, accurate skin-health education · Patients · Lead writer',
+    overview:
+      'A patient education booklet on invisible skin damage — UV/IR/blue-light/pollution mechanisms, common sunscreen mistakes, and corrective behaviors.',
+    skills: 'Health-literacy writing · behavior-change messaging · simplifying complex science · dermatology',
   },
   {
     id: 9,
@@ -98,8 +116,10 @@ export const projects: Project[] = [
     category: 'Regulatory Writing',
     audience: 'Regulatory / Sponsor',
     documentType: 'Protocol Synopsis',
-    caption:
-      'Produce an ethics-ready PMS protocol synopsis for a knee implant · Regulatory · Regulatory medical writer',
+    caption: 'Produce an ethics-ready PMS protocol synopsis for a knee implant · Regulatory · Regulatory medical writer',
+    overview:
+      'A protocol synopsis for a retrospective post-market surveillance study of a TKA device — design, indications, objectives, endpoints, population, sample-size rationale, and inclusion/exclusion criteria.',
+    skills: 'ICH-GCP-aligned protocol writing · study design articulation · regulatory precision · orthopedics',
   },
   {
     id: 10,
@@ -108,28 +128,34 @@ export const projects: Project[] = [
     category: 'Regulatory Writing',
     audience: 'Patients / Regulatory',
     documentType: 'Informed Consent Form',
-    caption:
-      'Write a consent document that is both compliant and genuinely understandable · Patients/Regulatory · Lead writer',
+    caption: 'Write a consent document that is both compliant and genuinely understandable · Patients/Regulatory · Lead writer',
+    overview:
+      'A GCP-compliant Subject Information Sheet and ICF for a randomized, double-masked bioequivalence study of Brinzolamide 1% ophthalmic suspension in open-angle glaucoma / ocular hypertension.',
+    skills: 'GCP-compliant consent writing · lay risk communication · regulatory completeness · ophthalmology',
   },
   {
     id: 11,
     slug: 'research-compliance-blog',
     title: 'Top Research-Compliance Challenges Universities Face — Thought-Leadership Blog',
-    category: 'Pharma Marketing / B2B Content',
+    category: 'B2B Content',
     audience: 'B2B Decision-Makers',
     documentType: 'Long-Form Blog',
-    caption:
-      'Win B2B trust through data-backed thought leadership · Compliance leaders & PIs · Lead writer & researcher',
+    caption: 'Win B2B trust through data-backed thought leadership · Compliance leaders & PIs · Lead writer & researcher',
+    overview:
+      'A long-form, referenced thought-leadership article for VPs of Compliance and Principal Investigators on operational compliance bottlenecks and automated governance solutions.',
+    skills: 'Long-form research · data-driven argumentation · B2B/healthtech fluency · SEO-aware structure',
   },
   {
     id: 12,
     slug: 'compliance-platform-landing-page',
     title: 'Integrated Research-Compliance Platform — High-Conversion Landing Page',
-    category: 'Pharma Marketing / B2B Content',
+    category: 'B2B Content',
     audience: 'B2B Buyers',
     documentType: 'Landing Page Copy',
-    caption:
-      'Convert B2B visitors into demo requests for a compliance platform · B2B buyers · Conversion copywriter',
+    caption: 'Convert B2B visitors into demo requests for a compliance platform · B2B buyers · Conversion copywriter',
+    overview:
+      'Conversion-focused landing-page copy for a B2B research-compliance SaaS platform — problem framing, benefit-led feature blocks, and a single demo CTA.',
+    skills: 'Conversion copywriting · benefit framing · message hierarchy · CTA design',
   },
 ]
 
@@ -188,30 +214,18 @@ export const faqs: FAQ[] = [
   },
   {
     q: 'Which therapeutic areas do you cover?',
-    a: 'Cardiology, diabetes, dermatology, respiratory, gastroenterology, orthopedics, ophthalmology, neurology, and endocrinology. I research new areas quickly when a brief requires it.',
+    a: 'Cardiology, endocrinology, dermatology, respiratory medicine, gastroenterology, orthopedics, ophthalmology, and neurology. I research new areas quickly when a brief requires it.',
   },
   {
     q: 'Do you write for doctors, patients, or both?',
-    a: 'Both — plus regulators. I tier depth, terminology, and tone to the audience, whether it\'s a peer-level MSL deck, a patient awareness booklet, or a GCP-compliant consent form.',
+    a: "Both — plus regulators. I tier depth, terminology, and tone to the audience, whether it's a peer-level MSL deck, a patient awareness booklet, or a GCP-compliant consent form.",
   },
   {
     q: 'How do you ensure scientific accuracy?',
     a: 'Every claim is sourced from primary literature and referenced (Vancouver style by default). Regulatory documents follow ICH-GCP structure. Content is written to pass medico-legal and regulatory review, not just to read well.',
   },
   {
-    q: 'What does your process look like?',
-    a: 'Brief and scope alignment → research and reference gathering → structured draft → revision against your feedback → final referenced, review-ready file.',
-  },
-  {
-    q: 'Can you work within agency and pharma review workflows?',
-    a: "Yes — that's the environment my four years have been built in: writing to brand briefs and delivering content that clears MLR and regulatory review with minimal rework.",
-  },
-  {
     q: 'How do you handle confidentiality?',
     a: "Happy to work under NDA. Samples shown here are anonymized or sample versions; client-identifying details are never shared.",
-  },
-  {
-    q: 'How do we start?',
-    a: "Send me the format, molecule/topic, and audience. I'll outline how I'd approach it, and we can begin with a small paid sample or a defined first deliverable.",
   },
 ]

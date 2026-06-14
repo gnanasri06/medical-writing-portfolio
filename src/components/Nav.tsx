@@ -7,7 +7,6 @@ const navLinks = [
   { href: 'about', label: 'About Me' },
   { href: 'services', label: 'Services' },
   { href: 'projects', label: 'Projects' },
-  { href: 'testimonials', label: 'Testimonials' },
   { href: 'faq', label: 'FAQ' },
   { href: 'contact', label: 'Contact' },
 ]
@@ -15,6 +14,7 @@ const navLinks = [
 export default function Nav() {
   const [isOpen, setIsOpen] = useState(false)
   const [active, setActive] = useState('home')
+  const [scrolled, setScrolled] = useState(false)
 
   const scrollTo = useCallback((id: string) => {
     setIsOpen(false)
@@ -28,6 +28,7 @@ export default function Nav() {
     const ids = navLinks.map((l) => l.href)
 
     const handleScroll = () => {
+      setScrolled(window.scrollY > 20)
       const threshold = window.scrollY + window.innerHeight * 0.35
       let current = ids[0]
       for (const id of ids) {
@@ -44,14 +45,15 @@ export default function Nav() {
 
   return (
     <>
-      <nav className="fixed top-0 inset-x-0 z-50 h-16 bg-white border-b border-[#E9EBED]">
+      <nav
+        className={`fixed top-0 inset-x-0 z-50 h-16 bg-white transition-shadow duration-200 ${
+          scrolled ? 'shadow-[0_1px_12px_rgba(0,0,0,0.08)]' : 'border-b border-[#E9EBED]'
+        }`}
+      >
         <div className="max-w-[1200px] mx-auto px-6 lg:px-8 h-full flex items-center justify-between">
-          <button
-            onClick={() => scrollTo('home')}
-            className="text-[#0A1317] font-semibold text-sm tracking-tight"
-          >
-            Gnanasri
-          </button>
+
+          {/* Spacer (wordmark removed) keeps links right-aligned */}
+          <div aria-hidden="true" />
 
           {/* Desktop links */}
           <div className="hidden md:flex items-center gap-5 lg:gap-7">
@@ -59,11 +61,16 @@ export default function Nav() {
               <button
                 key={href}
                 onClick={() => scrollTo(href)}
-                className={`text-sm font-medium transition-colors duration-150 ${
-                  active === href ? 'text-[#0064E0]' : 'text-[#5B6770] hover:text-[#0A1317]'
+                className={`text-sm font-medium transition-colors duration-150 relative ${
+                  active === href
+                    ? 'text-[#0064E0]'
+                    : 'text-[#5B6770] hover:text-[#0A1317]'
                 }`}
               >
                 {label}
+                {active === href && (
+                  <span className="absolute -bottom-5 left-0 right-0 h-0.5 bg-[#0064E0] rounded-full" />
+                )}
               </button>
             ))}
           </div>
@@ -74,21 +81,9 @@ export default function Nav() {
             onClick={() => setIsOpen((v) => !v)}
             aria-label={isOpen ? 'Close menu' : 'Open menu'}
           >
-            <span
-              className={`block w-5 h-[2px] bg-[#0A1317] origin-center transition-all duration-200 ${
-                isOpen ? 'rotate-45 translate-y-[7px]' : ''
-              }`}
-            />
-            <span
-              className={`block w-5 h-[2px] bg-[#0A1317] transition-opacity duration-200 ${
-                isOpen ? 'opacity-0' : ''
-              }`}
-            />
-            <span
-              className={`block w-5 h-[2px] bg-[#0A1317] origin-center transition-all duration-200 ${
-                isOpen ? '-rotate-45 -translate-y-[7px]' : ''
-              }`}
-            />
+            <span className={`block w-5 h-[2px] bg-[#0A1317] origin-center transition-all duration-200 ${isOpen ? 'rotate-45 translate-y-[7px]' : ''}`} />
+            <span className={`block w-5 h-[2px] bg-[#0A1317] transition-opacity duration-200 ${isOpen ? 'opacity-0' : ''}`} />
+            <span className={`block w-5 h-[2px] bg-[#0A1317] origin-center transition-all duration-200 ${isOpen ? '-rotate-45 -translate-y-[7px]' : ''}`} />
           </button>
         </div>
       </nav>

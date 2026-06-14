@@ -9,14 +9,14 @@ export default function FAQSection() {
   const toggle = (i: number) => setOpenIndex((prev) => (prev === i ? null : i))
 
   return (
-    <section id="faq" className="py-20 md:py-28 bg-white">
+    <section id="faq" className="py-14 md:py-16 bg-[#F5F7FA]">
       <div className="max-w-[1200px] mx-auto px-6 lg:px-8">
 
         <p className="text-xs font-semibold text-[#5B6770] uppercase tracking-[0.14em] mb-4">
           FAQ
         </p>
         <h2
-          className="font-[300] text-[#0A1317] mb-14 leading-[1.21] max-w-xl"
+          className="font-light text-[#0A1317] mb-14 leading-[1.21] max-w-xl"
           style={{ fontSize: 'clamp(22px, 3vw, 36px)' }}
         >
           Everything you might want to know before we start.
@@ -28,7 +28,7 @@ export default function FAQSection() {
             return (
               <div
                 key={i}
-                className="border border-[#E9EBED] rounded-2xl overflow-hidden"
+                className="bg-white border border-[#E9EBED] rounded-2xl overflow-hidden"
               >
                 <button
                   onClick={() => toggle(i)}

@@ -1,10 +1,12 @@
 /** @type {import('next').NextConfig} */
+const isProd = process.env.NODE_ENV === 'production'
+
 const nextConfig = {
   output: 'export',
   images: { unoptimized: true },
   trailingSlash: true,
   basePath: '/medical-writing-portfolio',
-  assetPrefix: '/medical-writing-portfolio/',
+  assetPrefix: isProd ? '/medical-writing-portfolio/' : '',
 }
 
 module.exports = nextConfig
